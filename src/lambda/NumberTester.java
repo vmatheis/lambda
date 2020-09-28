@@ -9,7 +9,9 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -17,9 +19,13 @@ import java.util.Map;
  * @author vmatheis 3. Beispiel
  */
 public class NumberTester {
-
+    
+    private NumberTest oddTester;
+    private NumberTest primeTester;
+    private NumberTest palindromeTester;
+    
     private String filename;
-    Map<Integer, Integer> numbers = new HashMap<>();
+    List<Integer[]> numbers = new ArrayList<>();
     int numberOfLines;
     
     public NumberTester(String fileName) {
@@ -30,7 +36,7 @@ public class NumberTester {
             line = br.readLine();
             while (line != null) {
                 String[] splitted = line.split(" ");
-                numbers.put(Integer.parseInt(splitted[1]), Integer.parseInt(splitted[0]));
+                numbers.add(new Integer[]{Integer.parseInt(splitted[0]), Integer.parseInt(splitted[1])});
                 line = br.readLine();
             }
             br.close();
@@ -38,8 +44,12 @@ public class NumberTester {
             System.out.println("IOException");
         }
     }
-
+   
+   
+    
     public void setOddEvenTester(NumberTest oddTester) {
+        
+        
     }
 
     public void setPrimeTester(NumberTest primeTester) {
@@ -50,4 +60,6 @@ public class NumberTester {
 
     public void testFile() {
     }
+    
+    
 }
