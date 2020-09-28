@@ -50,5 +50,8 @@ public class Main {
             }
             return true;
         });
+
+        tester.testFile();
+
     }
 }
