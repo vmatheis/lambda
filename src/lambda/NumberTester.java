@@ -5,17 +5,38 @@
  */
 package lambda;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  *
- * @author vmatheis 
- * 3. Beispiel
+ * @author vmatheis 3. Beispiel
  */
 public class NumberTester {
 
     private String filename;
-
+    Map<Integer, Integer> numbers = new HashMap<>();
+    int numberOfLines;
+    
     public NumberTester(String fileName) {
-        this.filename = filename;
+        try {
+            BufferedReader br = new BufferedReader(new FileReader(new File(fileName)));
+            String line = br.readLine();
+            numberOfLines = Integer.parseInt(line);
+            line = br.readLine();
+            while (line != null) {
+                String[] splitted = line.split(" ");
+                numbers.put(Integer.parseInt(splitted[1]), Integer.parseInt(splitted[0]));
+                line = br.readLine();
+            }
+            br.close();
+        } catch (IOException ex) {
+            System.out.println("IOException");
+        }
     }
 
     public void setOddEvenTester(NumberTest oddTester) {
