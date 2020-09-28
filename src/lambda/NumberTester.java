@@ -62,15 +62,17 @@ public class NumberTester {
             Integer[] get = numbers.get(i);
             switch (get[0]) {
                 case 1:
+                    oddTester.testNumber(get[1]);
                     break;
                 case 2:
+                    primeTester.testNumber(get[1]);
                     break;
                 case 3:
+                    palindromeTester.testNumber(get[1]);
                     break;
                 default:
                     break;
             }
         }
     }
-
 }
