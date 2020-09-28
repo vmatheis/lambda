@@ -8,6 +8,7 @@ package lambda;
 /**
  *
  * @author vmatheis
+ * 3. Beispiel
  */
 public interface NumberTest {
     boolean testNumber(int number);

@@ -11,6 +11,7 @@ import java.util.List;
 /**
  *
  * @author vmatheis
+ * 2. Beispiel
  */
 public class HalloJavamitForEach {
     static List<String> list = new ArrayList<String>();
