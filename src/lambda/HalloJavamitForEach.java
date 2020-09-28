@@ -29,6 +29,5 @@ public class HalloJavamitForEach {
         System.out.println("Lambda:");
         list.forEach(System.out::println);
     }
-    
-    
+        
 }
