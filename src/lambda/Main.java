@@ -12,14 +12,25 @@ import java.util.ArrayList;
  * @author vmatheis
  */
 public class Main {
+
     public static void main(String[] args) {
         Main main = new Main();
-        main.test();        
+        main.test();
     }
-   
-    public void test(){
+
+    public void test() {
         NumberTester tester = new NumberTester("lambda.txt");
-        
-        tester.setOddEvenTester((n) -> n%2 ==0);
+
+        tester.setOddEvenTester((n) -> n % 2 == 0);
+        tester.setPrimeTester((n) -> {
+                if (n <= 1)
+                    return false;
+
+                for (int i = 2; i <= n / 2; i += 2)
+                    if ((n % i) == 0)
+                        return false;
+
+                return true;
+        });
     }
 }
