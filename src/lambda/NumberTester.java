@@ -19,15 +19,15 @@ import java.util.Map;
  * @author vmatheis 3. Beispiel
  */
 public class NumberTester {
-    
+
     private NumberTest oddTester;
     private NumberTest primeTester;
     private NumberTest palindromeTester;
-    
+
     private String filename;
     List<Integer[]> numbers = new ArrayList<>();
     int numberOfLines;
-    
+
     public NumberTester(String fileName) {
         try {
             BufferedReader br = new BufferedReader(new FileReader(new File(fileName)));
@@ -44,11 +44,9 @@ public class NumberTester {
             System.out.println("IOException");
         }
     }
-   
-   
-    
+
     public void setOddEvenTester(NumberTest oddTester) {
-        this.oddTester = oddTester;        
+        this.oddTester = oddTester;
     }
 
     public void setPrimeTester(NumberTest primeTester) {
@@ -60,7 +58,19 @@ public class NumberTester {
     }
 
     public void testFile() {
+        for (int i = 0; i < numbers.size(); i++) {
+            Integer[] get = numbers.get(i);
+            switch (get[0]) {
+                case 1:
+                    break;
+                case 2:
+                    break;
+                case 3:
+                    break;
+                default:
+                    break;
+            }
+        }
     }
-    
-    
+
 }
