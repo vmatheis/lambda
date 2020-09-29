@@ -60,6 +60,7 @@ public class NumberTester {
     public void testFile() {
         for (int i = 0; i < numbers.size(); i++) {
             Integer[] get = numbers.get(i);
+
             if (get[0] != null) {
                 switch (get[0]) {
                     case 1:
