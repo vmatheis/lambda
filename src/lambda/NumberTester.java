@@ -60,19 +60,37 @@ public class NumberTester {
     public void testFile() {
         for (int i = 0; i < numbers.size(); i++) {
             Integer[] get = numbers.get(i);
-            switch (get[0]) {
-                case 1:
-                    oddTester.testNumber(get[1]);
-                    break;
-                case 2:
-                    primeTester.testNumber(get[1]);
-                    break;
-                case 3:
-                    palindromeTester.testNumber(get[1]);
-                    break;
-                default:
-                    break;
+            if (get[0] != null) {
+                switch (get[0]) {
+                    case 1:
+                        boolean oddEven = oddTester.testNumber(get[1]);
+                        if (oddEven) {
+                            System.out.println("EVEN");
+                        } else {
+                            System.out.println("ODD");
+                        }
+                        break;
+                    case 2:
+                        boolean prime = primeTester.testNumber(get[1]);
+                        if (prime) {
+                            System.out.println("PRIME");
+                        } else {
+                            System.out.println("NO PRIME");
+                        }
+                        break;
+                    case 3:
+                        boolean palin = palindromeTester.testNumber(get[1]);
+                        if (palin) {
+                            System.out.println("PALINDROME");
+                        } else {
+                            System.out.println("NO PALINDROME");
+                        }
+                        break;
+                    default:
+                        break;
+                }
             }
+
         }
     }
 }
